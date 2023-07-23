@@ -1,0 +1,36 @@
+
+<p-dialog [(visible)]="viewDialog" [style]="{width: '70vw'}" header="{{'tauxTaxTnbTabPan' | translate}}" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <p-tabView>
+            <p-tabPanel header="{{'tauxTaxTnbTabPan' | translate}}">
+                <div class="grid">
+                    <div class="field col-12 md:col-6">
+                        <label for="1">{{'Prix metre carre' | translate}}</label>
+                        <p-inputNumber class="mb-2 mr-2" id="1" [disabled]="true" placeholder="{{'Prix metre carre' | translate}}" [(ngModel)]="item.prixMetreCarre"></p-inputNumber>
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="2">{{'Prix retard metre carre' | translate}}</label>
+                        <p-inputNumber class="mb-2 mr-2" id="2" [disabled]="true" placeholder="{{'Prix retard metre carre' | translate}}" [(ngModel)]="item.prixRetardMetreCarre"></p-inputNumber>
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="3">{{'Categorie terrain' | translate}}</label>
+                        <p-dropdown [options]="categorieTerrains" [(ngModel)]="item.categorieTerrain" id="3" [disabled]="true" optionLabel="libelle" placeholder="{{'Categorie terrain' | translate}}"></p-dropdown>
+                    </div>
+                </div>
+            </p-tabPanel>
+
+        </p-tabView>
+
+    </ng-template>
+
+    <ng-template pTemplate="footer" >
+        <div class="grid-footer">
+            <div>
+                <button pButton pRipple label="Annuler" icon="pi pi-times" class="p-button-outlined" (click)="hideViewDialog()"></button>
+            </div>
+        </div>
+    </ng-template>
+</p-dialog>
+
+
+

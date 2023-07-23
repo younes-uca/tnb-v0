@@ -1,0 +1,36 @@
+
+<p-dialog [(visible)]="viewDialog" [style]="{width: '70vw'}" header="{{'terrainTabPan' | translate}}" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <p-tabView>
+            <p-tabPanel header="{{'terrainTabPan' | translate}}">
+                <div class="grid">
+                    <div class="field col-12 md:col-6">
+                        <label for="1">{{'Ref' | translate}}</label>
+                        <input class="mb-2 mr-2" type="text" pInputText [disabled]="true" placeholder="{{'Ref' | translate}}" autofocus  id="1" [(ngModel)]="item.ref">
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="2">{{'Categorie terrain' | translate}}</label>
+                        <p-dropdown [options]="categorieTerrains" [(ngModel)]="item.categorieTerrain" id="2" [disabled]="true" optionLabel="libelle" placeholder="{{'Categorie terrain' | translate}}"></p-dropdown>
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="3">{{'Redevable' | translate}}</label>
+                        <p-dropdown [options]="redevables" [(ngModel)]="item.redevable" id="3" [disabled]="true" optionLabel="cin" placeholder="{{'Redevable' | translate}}"></p-dropdown>
+                    </div>
+                </div>
+            </p-tabPanel>
+
+        </p-tabView>
+
+    </ng-template>
+
+    <ng-template pTemplate="footer" >
+        <div class="grid-footer">
+            <div>
+                <button pButton pRipple label="Annuler" icon="pi pi-times" class="p-button-outlined" (click)="hideViewDialog()"></button>
+            </div>
+        </div>
+    </ng-template>
+</p-dialog>
+
+
+

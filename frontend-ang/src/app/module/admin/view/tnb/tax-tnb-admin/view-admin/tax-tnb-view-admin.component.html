@@ -1,0 +1,64 @@
+
+<p-dialog [(visible)]="viewDialog" [style]="{width: '70vw'}" header="{{'taxTnbTabPan' | translate}}" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <p-tabView>
+            <p-tabPanel header="{{'taxTnbTabPan' | translate}}">
+                <div class="grid">
+                    <div class="field col-12 md:col-6">
+                        <label for="1">{{'Annee' | translate}}</label>
+                        <p-inputNumber class="mb-2 mr-2" id="1" [disabled]="true" placeholder="{{'Annee' | translate}}" [(ngModel)]="item.annee"></p-inputNumber>
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="2">{{'Montant base' | translate}}</label>
+                        <p-inputNumber class="mb-2 mr-2" id="2" [disabled]="true" placeholder="{{'Montant base' | translate}}" [(ngModel)]="item.montantBase"></p-inputNumber>
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="3">{{'Mantant retard' | translate}}</label>
+                        <p-inputNumber class="mb-2 mr-2" id="3" [disabled]="true" placeholder="{{'Mantant retard' | translate}}" [(ngModel)]="item.mantantRetard"></p-inputNumber>
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="4">{{'Nombre mois retard' | translate}}</label>
+                        <p-inputNumber class="mb-2 mr-2" id="4" [disabled]="true" placeholder="{{'Nombre mois retard' | translate}}" [(ngModel)]="item.nombreMoisRetard"></p-inputNumber>
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="5">{{'Montant total' | translate}}</label>
+                        <p-inputNumber class="mb-2 mr-2" id="5" [disabled]="true" placeholder="{{'Montant total' | translate}}" [(ngModel)]="item.montantTotal"></p-inputNumber>
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="6">{{'Date presentation' | translate}}</label>
+                        <p-calendar id="6" [disabled]="true"  [showTime]="true" [showSeconds]="false" placeholder="{{'Date presentation' | translate}}"  [(ngModel)]="item.datePresentation" dateFormat="{{dateFormat}}"></p-calendar>
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="7">{{'Date taxe tnb' | translate}}</label>
+                        <p-calendar id="7" [disabled]="true"  [showTime]="true" [showSeconds]="false" placeholder="{{'Date taxe tnb' | translate}}"  [(ngModel)]="item.dateTaxeTnb" dateFormat="{{dateFormat}}"></p-calendar>
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="8">{{'Redevable' | translate}}</label>
+                        <p-dropdown [options]="redevables" [(ngModel)]="item.redevable" id="8" [disabled]="true" optionLabel="cin" placeholder="{{'Redevable' | translate}}"></p-dropdown>
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="9">{{'Terrain' | translate}}</label>
+                        <p-dropdown [options]="terrains" [(ngModel)]="item.terrain" id="9" [disabled]="true" optionLabel="ref" placeholder="{{'Terrain' | translate}}"></p-dropdown>
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="10">{{'Taux tax tnb' | translate}}</label>
+                        <p-dropdown [options]="tauxTaxTnbs" [(ngModel)]="item.tauxTaxTnb" id="10" [disabled]="true" optionLabel="id" placeholder="{{'Taux tax tnb' | translate}}"></p-dropdown>
+                    </div>
+                </div>
+            </p-tabPanel>
+
+        </p-tabView>
+
+    </ng-template>
+
+    <ng-template pTemplate="footer" >
+        <div class="grid-footer">
+            <div>
+                <button pButton pRipple label="Annuler" icon="pi pi-times" class="p-button-outlined" (click)="hideViewDialog()"></button>
+            </div>
+        </div>
+    </ng-template>
+</p-dialog>
+
+
+
